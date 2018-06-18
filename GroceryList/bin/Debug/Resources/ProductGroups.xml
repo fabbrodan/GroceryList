@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Groups>
+	<Group>
+		<Index>0</Index>
+		<Name>Dairy</Name>
+	</Group>
+	<Group>
+		<Index>1</Index>
+		<Name>Vegetables</Name>
+	</Group>
+	<Group>
+		<Index>2</Index>
+		<Name>Meat</Name>
+	</Group>
+	<Group>
+		<Index>3</Index>
+		<Name>Fish</Name>
+	</Group>
+	<Group>
+		<Index>4</Index>
+		<Name>Pasta</Name>
+	</Group>
+	<Group>
+		<Index>5</Index>
+		<Name>Bread</Name>
+	</Group>
+	<Group>
+		<Index>6</Index>
+		<Name>Beverages</Name>
+	</Group>
+	<Group>
+		<Index>7</Index>
+		<Name>Snacks</Name>
+	</Group>
+	<Group>
+		<Index>8</Index>
+		<Name>Frozen</Name>
+	</Group>
+	<Group>
+		<Index>9</Index>
+		<Name>Household</Name>
+	</Group>
+	<Group>
+		<Index>10</Index>
+		<Name>Poultry</Name>
+	</Group>
+</Groups>
