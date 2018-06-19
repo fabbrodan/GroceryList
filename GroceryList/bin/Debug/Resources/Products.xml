@@ -4,372 +4,372 @@
 		<Index>0</Index>
 		<GroupID>0</GroupID>
 		<Name>Milk</Name>
-		<Price>1.19</Price>
+		<Price>1,19</Price>
 	</Product>
 	<Product>
 		<Index>1</Index>
 		<GroupID>0</GroupID>
 		<Name>Butter</Name>
-		<Price>1.79</Price>
+		<Price>1,79</Price>
 	</Product>
 	<Product>
 		<Index>2</Index>
 		<GroupID>0</GroupID>
 		<Name>Yoghurt</Name>
-		<Price>1.49</Price>
+		<Price>1,49</Price>
 	</Product>
 	<Product>
 		<Index>3</Index>
 		<GroupID>0</GroupID>
 		<Name>Heavy Cream</Name>
-		<Price>1.19</Price>
+		<Price>1,19</Price>
 	</Product>
 	<Product>
 		<Index>4</Index>
 		<GroupID>0</GroupID>
 		<Name>Cheddar</Name>
-		<Price>3.19</Price>
+		<Price>3,19</Price>
 	</Product>
 	<Product>
 		<Index>0</Index>
 		<GroupID>1</GroupID>
 		<Name>Cucumber</Name>
-		<Price>0.89</Price>
+		<Price>0,89</Price>
 	</Product>
 	<Product>
 		<Index>1</Index>
 		<GroupID>1</GroupID>
 		<Name>Tomatoes</Name>
-		<Price>0.99</Price>
+		<Price>0,99</Price>
 	</Product>
 	<Product>
 		<Index>2</Index>
 		<GroupID>1</GroupID>
 		<Name>Onions</Name>
-		<Price>0.69</Price>
+		<Price>0,69</Price>
 	</Product>
 	<Product>
 		<Index>3</Index>
 		<GroupID>1</GroupID>
 		<Name>Garlic</Name>
-		<Price>0.99</Price>
+		<Price>0,99</Price>
 	</Product>
 	<Product>
 		<Index>4</Index>
 		<GroupID>1</GroupID>
 		<Name>Asparagus</Name>
-		<Price>1.99</Price>
+		<Price>1,99</Price>
 	</Product>
 	<Product>
 		<Index>5</Index>
 		<GroupID>1</GroupID>
 		<Name>Bell Pepper</Name>
-		<Price>1.09</Price>
+		<Price>1,09</Price>
 	</Product>
 	<Product>
 		<Index>6</Index>
 		<GroupID>1</GroupID>
 		<Name>Mushrooms</Name>
-		<Price>2.19</Price>
+		<Price>2,19</Price>
 	</Product>
 	<Product>
 		<Index>0</Index>
 		<GroupID>2</GroupID>
 		<Name>Sirloin</Name>
-		<Price>9.99</Price>
+		<Price>9,99</Price>
 	</Product>
 	<Product>
 		<Index>1</Index>
 		<GroupID>2</GroupID>
 		<Name>Ribeye</Name>
-		<Price>14.99</Price>
+		<Price>14,99</Price>
 	</Product>
 	<Product>
 		<Index>2</Index>
 		<GroupID>2</GroupID>
 		<Name>T-Bone</Name>
-		<Price>17.49</Price>
+		<Price>17,49</Price>
 	</Product>
 	<Product>
 		<Index>3</Index>
 		<GroupID>2</GroupID>
 		<Name>Pork Chops</Name>
-		<Price>6.99</Price>
+		<Price>6,99</Price>
 	</Product>
 	<Product>
 		<Index>4</Index>
 		<GroupID>2</GroupID>
 		<Name>New York Strip</Name>
-		<Price>17.99</Price>
+		<Price>17,99</Price>
 	</Product>
 	<Product>
 		<Index>0</Index>
 		<GroupID>3</GroupID>
 		<Name>Salmon</Name>
-		<Price>5.99</Price>
+		<Price>5,99</Price>
 	</Product>
 	<Product>
 		<Index>1</Index>
 		<GroupID>3</GroupID>
 		<Name>Herrings</Name>
-		<Price>3.49</Price>
+		<Price>3,49</Price>
 	</Product>
 	<Product>
 		<Index>2</Index>
 		<GroupID>3</GroupID>
 		<Name>Cod</Name>
-		<Price>8.99</Price>
+		<Price>8,99</Price>
 	</Product>
 	<Product>
 		<Index>3</Index>
 		<GroupID>3</GroupID>
 		<Name>Squid</Name>
-		<Price>7.49</Price>
+		<Price>7,49</Price>
 	</Product>
 	<Product>
 		<Index>0</Index>
 		<GroupID>4</GroupID>
 		<Name>Rigatoni</Name>
-		<Price>2.49</Price>
+		<Price>2,49</Price>
 	</Product>
 	<Product>
 		<Index>1</Index>
 		<GroupID>4</GroupID>
 		<Name>Lasagna Sheets</Name>
-		<Price>1.99</Price>
+		<Price>1,99</Price>
 	</Product>
 	<Product>
 		<Index>2</Index>
 		<GroupID>4</GroupID>
 		<Name>Spaghetti</Name>
-		<Price>1.99</Price>
+		<Price>1,99</Price>
 	</Product>
 	<Product>
 		<Index>3</Index>
 		<GroupID>4</GroupID>
 		<Name>Linguine</Name>
-		<Price>2.19</Price>
+		<Price>2,19</Price>
 	</Product>
 	<Product>
 		<Index>4</Index>
 		<GroupID>4</GroupID>
 		<Name>Tagliatelle</Name>
-		<Price>1.99</Price>
+		<Price>1,99</Price>
 	</Product>
 	<Product>
 		<Index>0</Index>
 		<GroupID>5</GroupID>
 		<Name>Rye Loaf</Name>
-		<Price>2.19</Price>
+		<Price>2,19</Price>
 	</Product>
 	<Product>
 		<Index>1</Index>
 		<GroupID>5</GroupID>
 		<Name>Pumpernickel</Name>
-		<Price>2.39</Price>
+		<Price>2,39</Price>
 	</Product>
 	<Product>
 		<Index>2</Index>
 		<GroupID>5</GroupID>
 		<Name>Baguette</Name>
-		<Price>1.99</Price>
+		<Price>1,99</Price>
 	</Product>
 	<Product>
 		<Index>0</Index>
 		<GroupID>6</GroupID>
 		<Name>Coca-Cola</Name>
-		<Price>1.79</Price>
+		<Price>1,79</Price>
 	</Product>
 	<Product>
 		<Index>1</Index>
 		<GroupID>6</GroupID>
 		<Name>Pepsi</Name>
-		<Price>1.79</Price>
+		<Price>1,79</Price>
 	</Product>
 	<Product>
 		<Index>2</Index>
 		<GroupID>6</GroupID>
 		<Name>Fanta</Name>
-		<Price>1.79</Price>
+		<Price>1,79</Price>
 	</Product>
 	<Product>
 		<Index>3</Index>
 		<GroupID>6</GroupID>
 		<Name>Coca-Cola Zero</Name>
-		<Price>1.79</Price>
+		<Price>1,79</Price>
 	</Product>
 	<Product>
 		<Index>4</Index>
 		<GroupID>6</GroupID>
 		<Name>Pepsi Max</Name>
-		<Price>1.79</Price>
+		<Price>1,79</Price>
 	</Product>
 	<Product>
 		<Index>5</Index>
 		<GroupID>6</GroupID>
 		<Name>Fanta Zero</Name>
-		<Price>1.79</Price>
+		<Price>1,79</Price>
 	</Product>
 	<Product>
 		<Index>6</Index>
 		<GroupID>6</GroupID>
 		<Name>Lager Beer</Name>
-		<Price>1.19</Price>
+		<Price>1,19</Price>
 	</Product>
 	<Product>
 		<Index>7</Index>
 		<GroupID>6</GroupID>
 		<Name>Stout</Name>
-		<Price>2.29</Price>
+		<Price>2,29</Price>
 	</Product>
 	<Product>
 		<Index>8</Index>
 		<GroupID>6</GroupID>
 		<Name>India Pale Ale</Name>
-		<Price>1.79</Price>
+		<Price>1,79</Price>
 	</Product>
 	<Product>
 		<Index>9</Index>
 		<GroupID>6</GroupID>
 		<Name>Merlot</Name>
-		<Price>6.99</Price>
+		<Price>6,99</Price>
 	</Product>
 	<Product>
 		<Index>10</Index>
 		<GroupID>6</GroupID>
 		<Name>Cabernet Sauvignon</Name>
-		<Price>6.99</Price>
+		<Price>6,99</Price>
 	</Product>
 	<Product>
 		<Index>11</Index>
 		<GroupID>6</GroupID>
 		<Name>Syrah</Name>
-		<Price>6.99</Price>
+		<Price>6,99</Price>
 	</Product>
 	<Product>
 		<Index>12</Index>
 		<GroupID>6</GroupID>
 		<Name>Sauvignon Blanc</Name>
-		<Price>7.49</Price>
+		<Price>7,49</Price>
 	</Product>
 	<Product>
 		<Index>13</Index>
 		<GroupID>6</GroupID>
 		<Name>Chablis</Name>
-		<Price>7.49</Price>
+		<Price>7,49</Price>
 	</Product>
 	<Product>
 		<Index>14</Index>
 		<GroupID>6</GroupID>
 		<Name>Chardonnay</Name>
-		<Price>7.49</Price>
+		<Price>7,49</Price>
 	</Product>
 	<Product>
 		<Index>0</Index>
 		<GroupID>7</GroupID>
 		<Name>Pringles</Name>
-		<Price>2.29</Price>
+		<Price>2,29</Price>
 	</Product>
 	<Product>
 		<Index>1</Index>
 		<GroupID>7</GroupID>
 		<Name>Candied Peanuts</Name>
-		<Price>1.79</Price>
+		<Price>1,79</Price>
 	</Product>
 	<Product>
 		<Index>2</Index>
 		<GroupID>7</GroupID>
 		<Name>Snickers</Name>
-		<Price>0.99</Price>
+		<Price>0,99</Price>
 	</Product>
 	<Product>
 		<Index>3</Index>
 		<GroupID>7</GroupID>
 		<Name>Skittles</Name>
-		<Price>1.19</Price>
+		<Price>1,19</Price>
 	</Product>
 	<Product>
 		<Index>0</Index>
 		<GroupID>8</GroupID>
 		<Name>Curly Fries</Name>
-		<Price>3.19</Price>
+		<Price>3,19</Price>
 	</Product>
 	<Product>
 		<Index>1</Index>
 		<GroupID>8</GroupID>
 		<Name>Chicken Thighs</Name>
-		<Price>5.49</Price>
+		<Price>5,49</Price>
 	</Product>
 	<Product>
 		<Index>2</Index>
 		<GroupID>8</GroupID>
 		<Name>Wok Mix</Name>
-		<Price>1.99</Price>
+		<Price>1,99</Price>
 	</Product>
 	<Product>
 		<Index>3</Index>
 		<GroupID>8</GroupID>
 		<Name>Prawns</Name>
-		<Price>6.99</Price>
+		<Price>6,99</Price>
 	</Product>
 	<Product>
 		<Index>0</Index>
 		<GroupID>9</GroupID>
 		<Name>Paper Towels</Name>
-		<Price>2.19</Price>
+		<Price>2,19</Price>
 	</Product>
 	<Product>
 		<Index>1</Index>
 		<GroupID>9</GroupID>
 		<Name>Batteries</Name>
-		<Price>2.49</Price>
+		<Price>2,49</Price>
 	</Product>
 	<Product>
 		<Index>2</Index>
 		<GroupID>9</GroupID>
 		<Name>Soap</Name>
-		<Price>1.99</Price>
+		<Price>1,99</Price>
 	</Product>
 	<Product>
 		<Index>3</Index>
 		<GroupID>9</GroupID>
 		<Name>Light Bulb (35W)</Name>
-		<Price>3.99</Price>
+		<Price>3,99</Price>
 	</Product>
 	<Product>
 		<Index>0</Index>
 		<GroupID>10</GroupID>
 		<Name>Chicken (Whole)</Name>
-		<Price>8.99</Price>
+		<Price>8,99</Price>
 	</Product>
 	<Product>
 		<Index>1</Index>
 		<GroupID>10</GroupID>
 		<Name>Chicken Thighs</Name>
-		<Price>4.49</Price>
+		<Price>4,49</Price>
 	</Product>
 	<Product>
 		<Index>2</Index>
 		<GroupID>10</GroupID>
 		<Name>Chicken Breasts</Name>
-		<Price>5.49</Price>
+		<Price>5,49</Price>
 	</Product>
 	<Product>
 		<Index>3</Index>
 		<GroupID>10</GroupID>
 		<Name>Drumsticks</Name>
-		<Price>4.99</Price>
+		<Price>4,99</Price>
 	</Product>
 	<Product>
 		<Index>4</Index>
 		<GroupID>10</GroupID>
 		<Name>Turkey (Whole)</Name>
-		<Price>18.99</Price>
+		<Price>18,99</Price>
 	</Product>
 	<Product>
 		<Index>5</Index>
 		<GroupID>10</GroupID>
 		<Name>Pheasant (Whole)</Name>
-		<Price>39.99</Price>
+		<Price>39,99</Price>
 	</Product>
 </Products>

@@ -8,3 +8,13 @@ C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\obj
 C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\obj\Debug\GroceryList.csproj.CoreCompileInputs.cache
 C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\obj\Debug\GroceryList.exe
 C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\obj\Debug\GroceryList.pdb
+C:\Users\DAS\Documents\HERMODS\Programmering 1\GroceryList\GroceryList\bin\Debug\GroceryList.exe.config
+C:\Users\DAS\Documents\HERMODS\Programmering 1\GroceryList\GroceryList\bin\Debug\GroceryList.exe
+C:\Users\DAS\Documents\HERMODS\Programmering 1\GroceryList\GroceryList\bin\Debug\GroceryList.pdb
+C:\Users\DAS\Documents\HERMODS\Programmering 1\GroceryList\GroceryList\obj\Debug\GroceryList.csprojResolveAssemblyReference.cache
+C:\Users\DAS\Documents\HERMODS\Programmering 1\GroceryList\GroceryList\obj\Debug\GroceryList.Form1.resources
+C:\Users\DAS\Documents\HERMODS\Programmering 1\GroceryList\GroceryList\obj\Debug\GroceryList.Properties.Resources.resources
+C:\Users\DAS\Documents\HERMODS\Programmering 1\GroceryList\GroceryList\obj\Debug\GroceryList.csproj.GenerateResource.cache
+C:\Users\DAS\Documents\HERMODS\Programmering 1\GroceryList\GroceryList\obj\Debug\GroceryList.csproj.CoreCompileInputs.cache
+C:\Users\DAS\Documents\HERMODS\Programmering 1\GroceryList\GroceryList\obj\Debug\GroceryList.exe
+C:\Users\DAS\Documents\HERMODS\Programmering 1\GroceryList\GroceryList\obj\Debug\GroceryList.pdb

@@ -33,6 +33,8 @@
             this.selectableGroup = new System.Windows.Forms.GroupBox();
             this.selectablePanel = new System.Windows.Forms.Panel();
             this.removeBtn = new System.Windows.Forms.Button();
+            this.addedListBox = new System.Windows.Forms.ListBox();
+            this.addedGroup.SuspendLayout();
             this.selectableGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,10 +47,12 @@
             this.addBtn.TabIndex = 1;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.AddProduct);
             // 
             // addedGroup
             // 
             this.addedGroup.BackColor = System.Drawing.SystemColors.Window;
+            this.addedGroup.Controls.Add(this.addedListBox);
             this.addedGroup.Location = new System.Drawing.Point(386, 13);
             this.addedGroup.Name = "addedGroup";
             this.addedGroup.Size = new System.Drawing.Size(200, 333);
@@ -85,6 +89,16 @@
             this.removeBtn.TabIndex = 4;
             this.removeBtn.Text = "Remove";
             this.removeBtn.UseVisualStyleBackColor = true;
+            this.removeBtn.Click += new System.EventHandler(RemoveProduct);
+            // 
+            // addedListBox
+            // 
+            this.addedListBox.FormattingEnabled = true;
+            this.addedListBox.Location = new System.Drawing.Point(0, 20);
+            this.addedListBox.Name = "addedListBox";
+            this.addedListBox.Size = new System.Drawing.Size(200, 316);
+            this.addedListBox.TabIndex = 0;
+            this.addedListBox.ColumnWidth = this.addedListBox.Parent.Width;
             // 
             // Form1
             // 
@@ -97,6 +111,7 @@
             this.Controls.Add(this.addBtn);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.addedGroup.ResumeLayout(false);
             this.selectableGroup.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -109,6 +124,7 @@
         private System.Windows.Forms.GroupBox selectableGroup;
         private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.Panel selectablePanel;
+        private System.Windows.Forms.ListBox addedListBox;
     }
 }
 

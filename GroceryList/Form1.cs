@@ -2,10 +2,12 @@
 using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,12 +20,13 @@ namespace GroceryList
         {
             InitializeComponent();
             LoadProducts();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
         }
 
         private ProductGroup[] ProductGroups;
         private Product[] Products;
         private Product[] SelectedProdcuts = new Product[24];
-        private object[,] GroceryList = new object[24,24];
+        private object[,] GroceryList = new object[24,2];
 
         private void LoadProducts()
         {
@@ -169,7 +172,7 @@ namespace GroceryList
             if (selectablePanel.Controls.ContainsKey(objName + "PriceLabel"))
             {
                 Label priceLabel = (Label)selectablePanel.Controls.Find(objName + "PriceLabel", true)[0];
-                if (Count == 0)
+                if (Count == 0 || selectedProd == null)
                 {
                     priceLabel.Text = "";
                 }
@@ -189,5 +192,58 @@ namespace GroceryList
                 selectablePanel.Controls.Add(priceLabel);
             }
         }
+
+        private void AddProduct (object sender, EventArgs e)
+        {
+            int x = 0;
+            int count = 0;
+            Product addedProd = null;
+            foreach (Control control in selectablePanel.Controls)
+            {
+                if (control.GetType() == typeof(TextBox))
+                {
+                    TextBox countTb = (TextBox)control;
+                    Int32.TryParse(countTb.Text, out count);
+                    countTb.Text = "";
+                }
+
+                if (control.GetType() == typeof(ComboBox))
+                {
+                    ComboBox prodCb = (ComboBox)control;
+                    ProductGroup addedProdGroup = ProductGroups.FirstOrDefault(pg => pg.GetName() == prodCb.Name.Substring(0, prodCb.Name.Length - 4));
+                    addedProd = Products.FirstOrDefault(p => p.GetGroupIndex() == addedProdGroup.GetIndex() && p.GetIndex() == prodCb.SelectedIndex);
+                    prodCb.SelectedIndex = -1;
+                }
+
+                if (count > 0)
+                {
+                    GroceryList[x, 0] = addedProd;
+                    GroceryList[x, 1] = count;
+                    count = 0;
+                    x++;
+                }
+            }
+            LoadList(GroceryList);
+        }
+
+        private void RemoveProduct (object sender, EventArgs e)
+        {
+        }
+
+        private void LoadList(object[,] GL)
+        {
+            for (int i = 0; i < GL.GetLength(0); i++)
+            {
+                if (GL[i, 0] == null)
+                {
+                    break;
+                }
+
+                Product prod = (Product)GL[i, 0];
+                string itemText = prod.GetName() + " x " + GL[i, 1].ToString() + " á " + prod.GetPrice() + " - " + (prod.GetPrice() * Int32.Parse(GL[i, 1].ToString())).ToString() + "$" ;
+
+                addedListBox.Items.Add(itemText);
+            }
+        } 
     }
 }
