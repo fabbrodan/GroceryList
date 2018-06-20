@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.addBtn = new System.Windows.Forms.Button();
             this.addedGroup = new System.Windows.Forms.GroupBox();
+            this.totalCostLabel = new System.Windows.Forms.Label();
+            this.addedListBox = new System.Windows.Forms.ListBox();
             this.selectableGroup = new System.Windows.Forms.GroupBox();
             this.selectablePanel = new System.Windows.Forms.Panel();
             this.removeBtn = new System.Windows.Forms.Button();
-            this.addedListBox = new System.Windows.Forms.ListBox();
             this.addedGroup.SuspendLayout();
             this.selectableGroup.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +54,7 @@
             // addedGroup
             // 
             this.addedGroup.BackColor = System.Drawing.SystemColors.Window;
+            this.addedGroup.Controls.Add(this.totalCostLabel);
             this.addedGroup.Controls.Add(this.addedListBox);
             this.addedGroup.Location = new System.Drawing.Point(386, 13);
             this.addedGroup.Name = "addedGroup";
@@ -59,6 +62,24 @@
             this.addedGroup.TabIndex = 2;
             this.addedGroup.TabStop = false;
             this.addedGroup.Text = "My Groceries";
+            // 
+            // totalCostLabel
+            // 
+            this.totalCostLabel.AutoSize = true;
+            this.totalCostLabel.Location = new System.Drawing.Point(7, 314);
+            this.totalCostLabel.Name = "totalCostLabel";
+            this.totalCostLabel.Size = new System.Drawing.Size(49, 13);
+            this.totalCostLabel.TabIndex = 1;
+            this.totalCostLabel.Text = "Total: 0$";
+            // 
+            // addedListBox
+            // 
+            this.addedListBox.FormattingEnabled = true;
+            this.addedListBox.Location = new System.Drawing.Point(0, 20);
+            this.addedListBox.Name = "addedListBox";
+            this.addedListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.addedListBox.Size = new System.Drawing.Size(200, 290);
+            this.addedListBox.TabIndex = 0;
             // 
             // selectableGroup
             // 
@@ -89,17 +110,7 @@
             this.removeBtn.TabIndex = 4;
             this.removeBtn.Text = "Remove";
             this.removeBtn.UseVisualStyleBackColor = true;
-            this.removeBtn.Click += new System.EventHandler(RemoveProduct);
-            // 
-            // addedListBox
-            // 
-            this.addedListBox.FormattingEnabled = true;
-            this.addedListBox.Location = new System.Drawing.Point(0, 20);
-            this.addedListBox.Name = "addedListBox";
-            this.addedListBox.Size = new System.Drawing.Size(200, 316);
-            this.addedListBox.TabIndex = 0;
-            this.addedListBox.ColumnWidth = this.addedListBox.Parent.Width;
-            this.addedListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.removeBtn.Click += new System.EventHandler(this.RemoveProduct);
             // 
             // Form1
             // 
@@ -110,9 +121,11 @@
             this.Controls.Add(this.selectableGroup);
             this.Controls.Add(this.addedGroup);
             this.Controls.Add(this.addBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Grocery List";
             this.addedGroup.ResumeLayout(false);
+            this.addedGroup.PerformLayout();
             this.selectableGroup.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -126,6 +139,7 @@
         private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.Panel selectablePanel;
         private System.Windows.Forms.ListBox addedListBox;
+        private System.Windows.Forms.Label totalCostLabel;
     }
 }
 

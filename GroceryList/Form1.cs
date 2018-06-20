@@ -19,19 +19,25 @@ namespace GroceryList
         public Form1()
         {
             InitializeComponent();
+
+            // Call initial method to load data
             LoadProducts();
         }
 
         // array for globally handling prod groups
+        /* ----- CLASS OBJECT ----- */
         private ProductGroup[] ProductGroups;
 
         // array for globally handling available products
+        /* ----- CLASS OBJECT ----- */
         private Product[] Products;
 
         // 2D array for handling product and count of how many thereof
-        private object[,] GroceryList = new object[24,2];
+        /* ----- CLASS OBJECT ----- */
+        private object[,] GroceryList = new object[100,2];
 
         // Initial method to load product groups and products
+        /* ----- METHOD ----- */
         private void LoadProducts()
         {
             // Setting applications Culture info to always use comma as decimal separator
@@ -154,7 +160,8 @@ namespace GroceryList
             selectablePanel.Controls.Add(countLabel);
         }
 
-        // Event Handler to only allow numeric input into Count tetboxes
+        // Event Handler method to only allow numeric input into Count tetboxes
+        /* ----- METHOD ----- */
         private void DisallowText (object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -165,7 +172,8 @@ namespace GroceryList
             }
         }
 
-        // Event handler to reset count to 1 on change of product
+        // Event handler method to reset count to 1 on change of product
+        /* ----- METHOD ----- */
         private void OnDdwnSelect (object sender, EventArgs e)
         {
             // Convert sender to combobox
@@ -185,24 +193,32 @@ namespace GroceryList
             tb.Invalidate();
         }
 
-        // Event handler to change the text for the price of selected item * count when count is altered
+        // Event handler method to change the text for the price of selected item * count when count is altered
+        /* ----- METHOD ----- */
         private void OnCountUpdate(object sender, EventArgs e)
         {
             // Convert the sender to TextBox
             TextBox countTb = (TextBox)sender;
 
             int Count = 0;
-            try
-            {
-                Count = Int32.Parse(countTb.Text);
-            }
-            catch (FormatException)
-            {
-            }
+            Int32.TryParse(countTb.Text, out Count);
 
             // Math dropdown with count textbox
             string objName = countTb.Name.Substring(0, countTb.Name.Length - 5);
             ComboBox cb = (ComboBox)selectablePanel.Controls.Find(objName + "Ddwn", true)[0];
+
+            if (countTb.TextLength > 3)
+            {
+                MessageBox.Show("You can only add up to 999 items of the same type!");
+                countTb.Text = "";
+                cb.SelectedIndex = -1;
+                if (selectablePanel.Controls.ContainsKey(objName + "PriceLabel"))
+                {
+                    Label priceLabel = (Label)selectablePanel.Controls.Find(objName + "PriceLabel", true)[0];
+                    priceLabel.Text = "";
+                }
+                return;
+            }
 
             // Find group index of selected dropdown used
             int GroupIndex = ProductGroups.FirstOrDefault(o => o.GetName() == objName).GetIndex();
@@ -246,11 +262,14 @@ namespace GroceryList
             }
         }
 
-        // Event Handler for adding products
+        // Event Handler method for adding products
+        /* ----- METHOD ----- */
         private void AddProduct (object sender, EventArgs e)
         {
             // int to control index in 2D array
             int x = 0;
+
+            // Loop through 2D array to find the next empty index
             for (int i = 0; i < GroceryList.GetLength(0); i++)
             {
                 if (GroceryList[i,0] != null)
@@ -312,69 +331,79 @@ namespace GroceryList
             LoadList(GroceryList);
         }
 
-        // Event Handler for removing products
-
-        // LOOK AT HOW LIST IS HANDLED/UPDATED AFTER MULTIPLE SELECTED DELETED
+        // Event Handler method for removing products
+        /* ----- METHOD ----- */
         private void RemoveProduct (object sender, EventArgs e)
         {
+            // List to contain selected objects to be removed from listbox
             List<string> removeList = new List<string>();
 
+            // Loop through the selected items in listbox
             foreach (string selected in addedListBox.SelectedItems)
             {
+                // Get the actual productname
                 string ProductName = selected.Substring(0, selected.IndexOf('x') - 1);
                 
+                // Loop through 2D array
                 for (int i = 0; i < GroceryList.GetLength(0); i++)
                 {
+                    // int to check if the next element in array is empty
                     int j = i+1;
+
+                    // Create product object to validate against selected item
                     Product product = (Product)GroceryList[i,0];
+
+                    // if product exists
                     if (product != null)
                     {
+                        // if names match
                         if (product.GetName() == ProductName)
                         {
+                            // local int to manage the 2D array
                             int x = i;
+
+                            // while the next element in array is not empty move the next element into current position
                             while (GroceryList[j - 1, 0] != null)
                             {
-                                if (GroceryList[x, 0] != null)
-                                {
-                                    GroceryList[x, 0] = GroceryList[j, 0];
-                                    GroceryList[x, 1] = GroceryList[j, 1];
-                                    x++;
-                                    j++;
-                                }
-                                else
-                                {
-                                    GroceryList[x - 1, 0] = null;
-                                    GroceryList[x - 1, 1] = null;
-                                }
+                                GroceryList[x, 0] = GroceryList[j, 0];
+                                GroceryList[x, 1] = GroceryList[j, 1];
+                                x++;
+                                j++;
                             }
-                        }
-                        else
-                        {
-                            break;
-                        }
+                        }                        
                     }
+                    // if product object is empty break the loop because we've reached end of items
                     else
                     {
                         break;
                     }
                 }
+
+                // finally add the selected product to list of items to be removed
                 removeList.Add(selected);
             }
 
+            // loop through list and remove the item from listbox
             foreach (string remove in removeList)
             {
                 addedListBox.Items.Remove(remove);
             }
+
+            // Call to method to update total cost
+            UpdateCost();
         }
 
         // Method to display added products in a selectable list
-        
-        // MOVE THIS LOGI TO ADD METHOD???
+        /* ----- METHOD ----- */
         private void LoadList(object[,] GL)
         {
+            // int variable to keep track of populated elements in passed array
             int x = 0;
+
+            // loop through array
             for (int i = 0; i < GL.GetLength(0); i++)
             {
+                // if x position is not empty update x counter
                 if (GL[i,0] != null)
                 {
                     x++;
@@ -385,6 +414,7 @@ namespace GroceryList
                 }
             }
 
+            // if x counter is not equal to items in list box
             if (x != addedListBox.Items.Count)
             {
                 // Loop through 1st dimension of 2D array
@@ -400,15 +430,62 @@ namespace GroceryList
                     Product prod = (Product)GL[i, 0];
 
                     // Display prod name + count + cost for single item + total cost of price * count
-                    string itemText = prod.GetName() + " x " + GL[i, 1].ToString() + " á " + prod.GetPrice() + " - " + (prod.GetPrice() * Int32.Parse(GL[i, 1].ToString())).ToString() + "$";
+                    string itemText = prod.GetName() + " x " + GL[i, 1].ToString() + " á " + prod.GetPrice() + " - " + (prod.GetPrice() * Int32.Parse(GroceryList[i, 1].ToString())) + "$";
 
-                    // add string to list box item collection
+                    // add string to list box item collection if it does not exist
                     if (!addedListBox.Items.Contains(itemText))
                     {
                         addedListBox.Items.Add(itemText);
                     }
                 }
+
+                // Call method to calculate new total cost
+                UpdateCost();
             }
-        } 
+        }
+
+        // Method for updating total cost
+        /* ----- METHOD ----- */
+        private void UpdateCost()
+        {
+            // variable for the total cost
+            double totalCostForAll = 0.00;
+
+            // variable for the cost of one item times quantity
+            double totalCostForItem = 0.00;
+
+            // array to store each individual items total cost
+            double[] totalCostArr = new double[addedListBox.Items.Count];
+
+            // loop through 2D array
+            for (int i = 0; i < GroceryList.GetLength(0); i++)
+            {
+                // if the 2D array hits empty object then break out of loop
+                if (GroceryList[i,0] != null)
+                {
+                    // set product object
+                    Product product = (Product)GroceryList[i, 0];
+
+                    // calculate products total cost
+                    totalCostForItem = (product.GetPrice() * Int32.Parse(GroceryList[i, 1].ToString()));
+
+                    // add total cost of product to array
+                    totalCostArr[i] = totalCostForItem;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            // Loop through array and sum price of each products total cost
+            for (int y = 0; y < totalCostArr.Length; y++)
+            {
+                totalCostForAll += totalCostArr[y];
+            }
+
+            // set the label according to calculated total cost
+            totalCostLabel.Text = "Total: " + Math.Round(totalCostForAll, 2) + "$";
+        }
     }
 }

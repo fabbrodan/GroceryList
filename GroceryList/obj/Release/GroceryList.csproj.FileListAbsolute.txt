@@ -1,0 +1,9 @@
+C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\bin\Release\GroceryList.exe.config
+C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\bin\Release\GroceryList.exe
+C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\bin\Release\GroceryList.pdb
+C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\obj\Release\GroceryList.Form1.resources
+C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\obj\Release\GroceryList.Properties.Resources.resources
+C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\obj\Release\GroceryList.csproj.GenerateResource.Cache
+C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\obj\Release\GroceryList.csproj.CoreCompileInputs.cache
+C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\obj\Release\GroceryList.exe
+C:\Users\danie\Documents\Visual Studio 2017\Projects\GroceryList\GroceryList\obj\Release\GroceryList.pdb
