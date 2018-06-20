@@ -99,6 +99,7 @@
             this.addedListBox.Size = new System.Drawing.Size(200, 316);
             this.addedListBox.TabIndex = 0;
             this.addedListBox.ColumnWidth = this.addedListBox.Parent.Width;
+            this.addedListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             // 
             // Form1
             // 

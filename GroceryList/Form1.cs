@@ -229,13 +229,20 @@ namespace GroceryList
             // If label does not exist create new object and add it to the parent controls collection
             else
             {
-                Label priceLabel = new Label
+                if (selectedProd == null)
                 {
-                    Name = objName + "PriceLabel",
-                    Location = new Point(countTb.Location.X + 25, countTb.Location.Y + 5),
-                    Text = (selectedProd.GetPrice() * Int32.Parse(countTb.Text)).ToString() + "$"
-                };
-                selectablePanel.Controls.Add(priceLabel);
+                    return;
+                }
+                else
+                {
+                    Label priceLabel = new Label
+                    {
+                        Name = objName + "PriceLabel",
+                        Location = new Point(countTb.Location.X + 25, countTb.Location.Y + 5),
+                        Text = (selectedProd.GetPrice() * Int32.Parse(countTb.Text)).ToString() + "$"
+                    };
+                    selectablePanel.Controls.Add(priceLabel);
+                }
             }
         }
 
@@ -244,6 +251,14 @@ namespace GroceryList
         {
             // int to control index in 2D array
             int x = 0;
+            for (int i = 0; i < GroceryList.GetLength(0); i++)
+            {
+                if (GroceryList[i,0] != null)
+                {
+                    x++;
+                }
+                else { break; }
+            }
 
             // int to represent count of products entered by user
             int count = 0;
@@ -298,65 +313,101 @@ namespace GroceryList
         }
 
         // Event Handler for removing products
-        /* ----- FIX THIS FIX THIS FIX THIS FIX THIS FIX THIS FIX THIS ------ */
+
+        // LOOK AT HOW LIST IS HANDLED/UPDATED AFTER MULTIPLE SELECTED DELETED
         private void RemoveProduct (object sender, EventArgs e)
         {
-            Product RemovedProduct = null;
+            List<string> removeList = new List<string>();
 
-            while (addedListBox.SelectedItems.Count > 0)
+            foreach (string selected in addedListBox.SelectedItems)
             {
-                Remove();
-            }
-
-            void Remove()
-            {
-                List<string> Removed = new List<string>();
-                foreach (string SelectedItem in addedListBox.SelectedItems)
+                string ProductName = selected.Substring(0, selected.IndexOf('x') - 1);
+                
+                for (int i = 0; i < GroceryList.GetLength(0); i++)
                 {
-                    string ProdString = SelectedItem.Substring(0, SelectedItem.IndexOf('x') - 1);
-
-                    for (int i = 0; i < GroceryList.GetLength(0); i++)
+                    int j = i+1;
+                    Product product = (Product)GroceryList[i,0];
+                    if (product != null)
                     {
-                        if (GroceryList[i,0] != null)
+                        if (product.GetName() == ProductName)
                         {
-                            RemovedProduct = (Product)GroceryList[i, 0];
-                            if (RemovedProduct.GetName() == ProdString)
+                            int x = i;
+                            while (GroceryList[j - 1, 0] != null)
                             {
-                                GroceryList[i, 0] = null;
-                                GroceryList[i, 1] = null;
-                                Removed.Add(SelectedItem);
-                                break;
+                                if (GroceryList[x, 0] != null)
+                                {
+                                    GroceryList[x, 0] = GroceryList[j, 0];
+                                    GroceryList[x, 1] = GroceryList[j, 1];
+                                    x++;
+                                    j++;
+                                }
+                                else
+                                {
+                                    GroceryList[x - 1, 0] = null;
+                                    GroceryList[x - 1, 1] = null;
+                                }
                             }
                         }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        break;
                     }
                 }
-                foreach(string rem in Removed)
-                {
-                    addedListBox.Items.Remove(rem);
-                }
+                removeList.Add(selected);
+            }
+
+            foreach (string remove in removeList)
+            {
+                addedListBox.Items.Remove(remove);
             }
         }
 
         // Method to display added products in a selectable list
+        
+        // MOVE THIS LOGI TO ADD METHOD???
         private void LoadList(object[,] GL)
         {
-            // Loop through 1st dimension of 2D array
+            int x = 0;
             for (int i = 0; i < GL.GetLength(0); i++)
             {
-                // when we hit empty space break loop
-                if (GL[i, 0] == null)
+                if (GL[i,0] != null)
+                {
+                    x++;
+                }
+                else
                 {
                     break;
                 }
+            }
 
-                // Product to generate text added to ListBox view
-                Product prod = (Product)GL[i, 0];
+            if (x != addedListBox.Items.Count)
+            {
+                // Loop through 1st dimension of 2D array
+                for (int i = 0; i < GL.GetLength(0); i++)
+                {
+                    // when we hit empty space break loop
+                    if (GL[i, 0] == null)
+                    {
+                        break;
+                    }
 
-                // Display prod name + count + cost for single item + total cost of price * count
-                string itemText = prod.GetName() + " x " + GL[i, 1].ToString() + " á " + prod.GetPrice() + " - " + (prod.GetPrice() * Int32.Parse(GL[i, 1].ToString())).ToString() + "$" ;
+                    // Product to generate text added to ListBox view
+                    Product prod = (Product)GL[i, 0];
 
-                // add string to list box item collection
-                addedListBox.Items.Add(itemText);
+                    // Display prod name + count + cost for single item + total cost of price * count
+                    string itemText = prod.GetName() + " x " + GL[i, 1].ToString() + " á " + prod.GetPrice() + " - " + (prod.GetPrice() * Int32.Parse(GL[i, 1].ToString())).ToString() + "$";
+
+                    // add string to list box item collection
+                    if (!addedListBox.Items.Contains(itemText))
+                    {
+                        addedListBox.Items.Add(itemText);
+                    }
+                }
             }
         } 
     }
